@@ -1,0 +1,147 @@
+Example 1 : Fetch the list of available users details.
+
+request GET'https://reqres.in/'
+{
+Response
+200 OK
+"status": "success",
+"data":
+
+  {
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 1,
+            "email": "george.bluth@reqres.in",
+            "first_name": "George",
+            "last_name": "Bluth",
+            "avatar": "https://reqres.in/img/faces/1-image.jpg"
+        },
+        {
+            "id": 2,
+            "email": "janet.weaver@reqres.in",
+            "first_name": "Janet",
+            "last_name": "Weaver",
+            "avatar": "https://reqres.in/img/faces/2-image.jpg"
+        },
+        {
+            "id": 3,
+            "email": "emma.wong@reqres.in",
+            "first_name": "Emma",
+            "last_name": "Wong",
+            "avatar": "https://reqres.in/img/faces/3-image.jpg"
+        },
+        {
+            "id": 4,
+            "email": "eve.holt@reqres.in",
+            "first_name": "Eve",
+            "last_name": "Holt",
+            "avatar": "https://reqres.in/img/faces/4-image.jpg"
+        },
+        {
+            "id": 5,
+            "email": "charles.morris@reqres.in",
+            "first_name": "Charles",
+            "last_name": "Morris",
+            "avatar": "https://reqres.in/img/faces/5-image.jpg"
+        },
+        {
+            "id": 6,
+            "email": "tracey.ramos@reqres.in",
+            "first_name": "Tracey",
+            "last_name": "Ramos",
+            "avatar": "https://reqres.in/img/faces/6-image.jpg"
+        }
+    ],
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+HTTP/1.1 200 OK
+PASSED: getlistofemplyee
+
+  
+
+Example 2 : Search the employees using the Id but that employee detail is not available, validate the response.
+
+request GET'https://reqres.in/api/users/47'
+{
+Response
+404
+{
+    
+}
+HTTP/1.1 404 Not Found
+PASSED: getSingleEmplyee
+
+
+
+Eample 3 : Create a one employee details and check whether it employee is created
+
+
+
+request POST 'https://reqres.in/api/users'
+Request body:
+{
+
+	"name": "Rajesh",
+    	"job": "Testing"
+
+}
+
+Response :
+{
+
+201
+"status": "success",
+{
+    "name": "Rajesh",
+    "job": "Testing",
+    "id": "114",
+    "createdAt": "2022-09-13T09:53:45.032Z"
+}
+HTTP/1.1 201 Created
+PASSED: createNewemplyee
+
+
+
+Example 4 : Update the Job value for the created employee using employee Id and check the update happen for the employee.
+
+PUT  'https://reqres.in/api/users/2'
+
+
+"Note": Update job value not able to fetch record which i was Created(*Defect)
+
+Request body:
+{
+    "name": "Rajesh",
+    "job": "Testingupdate"
+}
+
+Response body:
+{
+    "name": "Rajesh",
+    "job": "Testingupdate",
+    "updatedAt": "2022-09-13T10:11:38.974Z"
+}
+HTTP/1.1 200 OK
+PASSED: updateExistinguser
+
+ 
+
+Example 5 : Delete the employee using employee Id and check the employee details are deleted successfully.
+
+
+DELETE 'https://reqres.in/api/users/7'
+
+Response:
+HTTP/1.1 
+Status: 204 No Content
+PASSED: deleteUserlist
+
+
+

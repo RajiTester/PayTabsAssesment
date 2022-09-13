@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [page object model - PayTabTask]" guice-stage="DEVELOPMENT">
+  <test name="logintest(failed)">
+    <classes>
+      <class name="paytabTask1.Profiletestcase">
+        <methods>
+          <include name="closebrowser"/>
+          <include name="login"/>
+          <include name="openbrowser"/>
+        </methods>
+      </class> <!-- paytabTask1.Profiletestcase -->
+    </classes>
+  </test> <!-- logintest(failed) -->
+</suite> <!-- Failed suite [page object model - PayTabTask] -->
